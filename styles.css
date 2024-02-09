@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;  
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden; /*we are doing this cuz we dont want to scroll it horizontally*/
+    overflow-y: auto;   /*we are doing this cuz we need to scross vertically*/
+    perspective: 10px; /*we want to use 3d type or z axis plan type of using you can give 10px 100px anything wont matter*/
+}
+/**/
+.container{
+    position:relative; /*we are giving it relative( non static) cuz we need to use absalute where it should be non static */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index:-1;
+}
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+.background, .foreground{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;/*fit image in container */
+
+}
